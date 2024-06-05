@@ -20,9 +20,16 @@ mqttc.on_message = on_message
 # Other loop*() functions are available that give a threaded interface and a
 # manual interface.
 mqttc.loop_forever()
+
+CAMINHO TERMINAL:
+cd Projetos/USP/ICC/icc-final/tests
+python3 teste-subscribe.py
 """
 
-mqttc.publish("teste", "Hello World!")
-mqttc.publish("teste", 'açúcar!')
+with open("arquivo.txt", "r") as file:
+    arquivo = file.read()
+    #mqttc.publish("teste", "Hello World!")
+
+mqttc.publish("teste", arquivo, qos=1)
 
 mqttc.disconnect()
