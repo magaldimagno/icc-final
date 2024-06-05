@@ -1,6 +1,6 @@
 from settings.settings import *
 
-mqttc.subscribe("teste")
+mqttc.subscribe(topico, qos=1)
 
 mqttc.on_message = on_message
 #mqttc.on_connect = on_connect
