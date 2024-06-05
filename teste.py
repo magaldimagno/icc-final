@@ -17,7 +17,6 @@ def on_message(client, userdata, msg):
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 
-
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.
 # Other loop*() functions are available that give a threaded interface and a
