@@ -5,7 +5,7 @@ import PIL.Image as Image
 #Host Local: localhost
 #Host Paho: mqtt.eclipseprojects.io
 
-host = "localhost"
+host = "mqtt.eclipseprojects.io"
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.connect(host, 1883, 60)
