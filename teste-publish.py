@@ -1,6 +1,4 @@
-import paho.mqtt.client as mqtt
-mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-mqttc.connect("localhost", 1883, 60)
+from settings import *
 
 """
 # The callback for when the client receives a CONNACK response from the server.
@@ -25,7 +23,6 @@ mqttc.loop_forever()
 """
 
 mqttc.publish("teste", "Hello World!")
-
-mqttc.publish('teste', 'açúcar!')
+mqttc.publish("teste", 'açúcar!')
 
 mqttc.disconnect()
