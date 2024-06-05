@@ -1,10 +1,16 @@
 import paho.mqtt.client as mqtt
 import PIL.Image as Image
 
-mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-mqttc.connect("localhost", 1883, 60)
+#Host Gratuito: ????
+#Host Local: localhost
+#Host Paho: mqtt.eclipseprojects.io
 
-topico = "teste"
+host = "localhost"
+
+mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+mqttc.connect(host, 1883, 60)
+
+topico = "ICC-USP"
 
 def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}")
