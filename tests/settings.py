@@ -12,7 +12,7 @@ host = "mqtt.eclipseprojects.io"
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.connect(host, 1883, 60)
 
-topicos = ["ICC-USP", "ELEONORA", "GBR"]
+topicos = ["MAGNO", "ELEONORA", "GBR", "PERIGOSO", "TESTE", "LEQUE", "ICC-USP"]
 
 def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}")
