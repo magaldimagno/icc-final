@@ -9,15 +9,14 @@ with open("arquivo.txt", "r") as file:
     arquivo = file.read()
     mqttc.publish("teste", arquivo, qos=1)
 
+topico = topicos[0]
+"""
 
 print(f"Lista de tópicos: {topicos}")
-topico = input("Digite o tópico: ").upper()
+topico = input("Digite o seu tópico: ").upper()
 if topico not in topicos:
     print("[ERRO]: Tópico não encontrado")
     exit()
-"""
-
-topico = topicos[0]
 
 mensagem = input("Digite a mensagem: ")
 
