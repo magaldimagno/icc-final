@@ -16,7 +16,6 @@ topicos = ["MAGNO", "ELEONORA", "GBR", "PERIGOSO", "TESTE", "LEQUE", "ICC-USP"]
 
 def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}")
-    client.subscribe("$SYS/#")
 
 arquivo = os.path.join(os.path.dirname(__file__), "arquivo.txt")
 
