@@ -1,4 +1,4 @@
-from settings import *
+from config import *
 
 """
 CAMINHO TERMINAL:

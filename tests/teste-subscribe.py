@@ -1,4 +1,4 @@
-from settings import *
+from config import *
 
 for i in topicos:
     mqttc.subscribe(i, qos=1)
