@@ -24,7 +24,6 @@ def on_message(client, userdata, msg):
     message = msg.payload.decode()
     topic = msg.topic
     date = datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-    retain = msg.retain
     texto = f"{topic} [{date}]: {message}"
     print(texto)
     with open(arquivo, "a") as file:
