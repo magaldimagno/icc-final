@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import PIL.Image as Image
+import datetime
 import os
 
 #Host Gratuito: ????
@@ -22,7 +23,8 @@ def on_connect(client, userdata, flags, reason_code, properties):
 arquivo = os.path.join(os.path.dirname(__file__), "arquivo.txt")
 
 def on_message(client, userdata, msg):
-    texto = msg.topic +": " +msg.payload.decode()
+#    texto = msg.topic + ": " + msg.payload.decode() + " - " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    texto = f"{msg.topic} [{datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')}]: {msg.payload.decode()}"
     print(texto)
     with open(arquivo, "a") as file:
         print(texto, file=file)
