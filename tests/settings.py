@@ -21,7 +21,11 @@ def on_connect(client, userdata, flags, reason_code, properties):
 arquivo = os.path.join(os.path.dirname(__file__), "arquivo.txt")
 
 def on_message(client, userdata, msg):
-    texto = f"{msg.topic} [{datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')}]: {msg.payload.decode()}"
+    message = msg.payload.decode()
+    topic = msg.topic
+    date = datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+    retain = msg.retain
+    texto = f"{topic} [{date}]: {message}"
     print(texto)
     with open(arquivo, "a") as file:
         print(texto, file=file)

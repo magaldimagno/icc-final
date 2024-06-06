@@ -1,4 +1,4 @@
-from tests.settings import *
+from settings import *
 
 """
 CAMINHO TERMINAL:
@@ -12,7 +12,7 @@ with open("arquivo.txt", "r") as file:
 
 topico = topicos[0]
 
-mensagem = "Hello World!"
+mensagem = input("Digite a mensagem: ")
 
 mqttc.publish(topico, mensagem, qos=1)
 
