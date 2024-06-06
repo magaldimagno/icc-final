@@ -18,7 +18,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}")
     client.subscribe("$SYS/#")
 
-arquivo = os.path.join(os.path.dirname(__file__), "arquivo.txt")
+arquivo = os.path.join(os.path.dirname(__file__), "historico.txt")
 
 def on_message(client, userdata, msg):
     message = msg.payload.decode()
