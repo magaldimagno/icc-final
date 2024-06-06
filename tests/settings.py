@@ -12,9 +12,7 @@ host = "mqtt.eclipseprojects.io"
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.connect(host, 1883, 60)
 
-topico = "ICC-USP"
-topico1 = "ELEONORA"
-topico2 = "GBR"
+topicos = ["ICC-USP", "ELEONORA", "GBR"]
 
 def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}")
@@ -23,7 +21,6 @@ def on_connect(client, userdata, flags, reason_code, properties):
 arquivo = os.path.join(os.path.dirname(__file__), "arquivo.txt")
 
 def on_message(client, userdata, msg):
-#    texto = msg.topic + ": " + msg.payload.decode() + " - " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     texto = f"{msg.topic} [{datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')}]: {msg.payload.decode()}"
     print(texto)
     with open(arquivo, "a") as file:
