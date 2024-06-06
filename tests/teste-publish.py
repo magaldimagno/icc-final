@@ -1,4 +1,4 @@
-from settings.settings import *
+from tests.settings import *
 
 """
 # The callback for when the client receives a CONNACK response from the server.
