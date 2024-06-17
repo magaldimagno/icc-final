@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 import PIL.Image as Image
 import datetime
 import os
+from playsound import playsound
 
 #Host Gratuito: ????
 #Host Local: localhost
@@ -27,9 +28,11 @@ def on_connect(client, userdata, flags, reason_code, properties):
     client.subscribe("$SYS/#")
 
 historico = os.path.join(os.path.dirname(__file__), "historico.txt")
+audio = os.path.join(os.path.dirname(__file__), "audio.mp3")
 #log = os.path.join(os.path.dirname(__file__), "log.txt")
 
 def on_message(client, userdata, msg):
+    playsound(audio)
     message = msg.payload.decode()
     topic = msg.topic
     date = datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')
