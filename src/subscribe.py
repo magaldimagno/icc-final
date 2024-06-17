@@ -1,5 +1,7 @@
 from config import *
 import datetime
+import os
+
 
 historico = os.path.join(os.path.dirname(__file__), "log/historico.txt")
 

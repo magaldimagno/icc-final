@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import os
 
 host = "mqtt.eclipseprojects.io"
 
