@@ -10,6 +10,23 @@ with open("arquivo.txt", "r") as file:
     mqttc.publish("teste", arquivo, qos=1)
 
 topico = topicos[0]
+
+print(f'Estes são os usuários disponíveis: {topicos}')
+topico = input("Digite o seu usuário: ").upper()
+if topico in topicos:
+    mensagem = input("Digite a mensagem: ")
+else:
+    print("Usuário não cadastrado")
+    resposta = input("Deseja cadastrar um novo usuário? (s/n) ").lower()
+    if resposta == "s" or resposta == "sim":
+        topicos.append(topico.upper)
+        with open(cadastros, "a") as file:
+            print(topico, file=file)
+        print(f'Usuário {topico} cadastrado com sucesso!')
+        mensagem = input("Digite a mensagem: ")
+    else:
+        exit()
+
 """
 
 print(f"Lista de tópicos: {topicos}")

@@ -14,6 +14,14 @@ mqttc.connect(host, 1883, 60)
 
 topicos = ["MAGNO", "ELEONORA", "GBR", "PERIGOSO", "TESTE", "LEQUE", "ICC-USP", "JOÃO PAULO"]
 
+"""
+topicos = []
+cadastros = os.path.join(os.path.dirname(__file__), "cadastros.txt")
+with open(cadastros, "r") as file:
+    for line in file:
+        topicos.append(line.strip())
+"""
+
 def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}")
     client.subscribe("$SYS/#")
