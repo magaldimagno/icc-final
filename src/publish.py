@@ -1,9 +1,9 @@
 from config import *
 
-print(f"Lista de tópicos: {topicos}")
-topico = input("Digite o seu tópico: ").upper()
+print(f"Lista de usuários: {topicos}")
+topico = input("Digite o seu usuário: ").upper()
 if topico not in topicos:
-    print("[ERRO]: Tópico não encontrado")
+    print("[ERRO]: Usuário não encontrado")
     exit()
 
 mensagem = input("Digite a mensagem: ")
