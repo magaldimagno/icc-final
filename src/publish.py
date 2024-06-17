@@ -1,6 +1,7 @@
 from config import *
 
-topico = topicos[0]
+print(f'Estes são os usuários disponíveis: {topicos}')
+topico = input("Digite o seu usuário: ").upper()
 mensagem = input("Digite a mensagem: ")
 
 mqttc.publish(topico, mensagem, qos=1)
