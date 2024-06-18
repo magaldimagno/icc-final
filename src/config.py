@@ -13,4 +13,4 @@ mqttc.connect(host, 1883, 60)
 
 # Define a lista dos tópicos MQTT
 
-topicos = ["MAGNO", "LEQUE", "PERIGOSO", "GBR", "ANDRE"]
+topicos = ["MAGNO", "LEQUE", "PERIGOSO", "GBR", "ANDRE", "ELEONORA"]

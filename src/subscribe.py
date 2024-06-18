@@ -1,7 +1,6 @@
 from config import *
 import datetime  
 import os  
-from playsound import playsound
 
 # Define o caminho dos arquivos externos utilizados
 
@@ -11,7 +10,11 @@ notificacao = os.path.join(os.path.dirname(__file__), "sounds/olha_a_mensagem.mp
 # Função chamada quando uma mensagem é recebida
 
 def on_message(client, userdata, msg):
-    playsound(notificacao)  # Toca o som de notificação
+    try:
+        from playsound import playsound # Importa a função playsound da biblioteca playsound
+        playsound(notificacao)  # Toca o som de notificação
+    except:
+        pass
     mensagem = msg.payload.decode()  # Decodifica a mensagem recebida
     topico = msg.topic  # Obtém o tópico da mensagem
     datahora = datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')  # Obtém a data e hora atual
