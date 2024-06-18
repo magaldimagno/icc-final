@@ -3,6 +3,8 @@ import PIL.Image as Image
 import datetime
 import os
 from playsound import playsound
+from base64 import b64encode
+from base64 import b64decode
 
 #Host Gratuito: ????
 #Host Local: localhost
